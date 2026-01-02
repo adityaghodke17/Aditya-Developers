@@ -34,7 +34,7 @@ body {
     color: var(--light);
     overflow-x: hidden;
     min-height: 100vh;
-    cursor: none;
+    cursor: default;
 }
 
 /* ===== LOADING SCREEN ===== */
