@@ -1,1 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Developers | Animated Web Solutions</title>
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="#">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loader">
+            <div class="loader-text">
+                <span class="letter">A</span>
+                <span class="letter">D</span>
+                <span class="letter">I</span>
+                <span class="letter">T</span>
+                <span class="letter">Y</span>
+                <span class="letter">A</span>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Sound Control -->
+    <div class="sound-control">
+        <button id="soundToggle" class="sound-btn">
+            <i class="fas fa-volume-up"></i>
+            <i class="fas fa-volume-mute"></i>
+        </button>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Particle Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-text">Aditya</span>
+            <span class="logo-highlight">Developers</span>
+            <div class="logo-dot"></div>
+        </div>
+        
+        <div class="menu-toggle" id="menuToggle">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li><a href="#" class="nav-btn">Get Quote</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-badge animate-pop">
+                <i class="fas fa-star"></i>
+                <span>Web Development Experts</span>
+            </div>
+            
+            <h1 class="hero-title">
+                <span class="title-line">We Create</span>
+                <span class="title-animated">
+                    <span class="word">Amazing</span>
+                    <span class="word">Animated</span>
+                    <span class="word">Awesome</span>
+                    <span class="word">Digital</span>
+                </span>
+                <span class="title-line">Experiences</span>
+            </h1>
+            
+            <p class="hero-subtitle">
+                Transforming your ideas into interactive, animated websites that captivate and convert.
+            </p>
+            
+            <div class="hero-buttons">
+                <a href="#portfolio" class="btn btn-primary">
+                    <span>View Our Work</span>
+                    <i class="fas fa-arrow-right"></i>
+                    <div class="btn-shine"></div>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <span>Start Project</span>
+                    <i class="fas fa-rocket"></i>
+                </a>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <h3 data-count="150">0</h3>
+                    <p>Projects Done</p>
+                </div>
+                <div class="stat">
+                    <h3 data-count="98">0</h3>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="stat">
+                    <h3 data-count="5">0</h3>
+                    <p>Years Experience</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-visual">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+                <div class="shape shape-5"></div>
+            </div>
+            
+            <div class="code-animation">
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span>animation.js</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="code-line">// Creating magic animations...</div>
+                        <div class="code-line">website.addAnimation("scroll", true);</div>
+                        <div class="code-line">website.addAnimation("3d", true);</div>
+                        <div class="code-line">website.addSound("hover", true);</div>
+                        <div class="code-line">website.launch();</div>
+                        <div class="cursor-blink">_</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About <span class="highlight">Us</span></h2>
+                <p class="section-subtitle">We bring creativity and technology together</p>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>We Make <span class="text-gradient">Websites Dance</span></h3>
+                    <p>Specializing in creating animated web experiences that engage users and drive business growth.</p>
+                    
+                    <div class="features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Fast Loading</h4>
+                                <p>Optimized animations for speed</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Mobile First</h4>
+                                <p>Perfect on all devices</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-headphones"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Sound Design</h4>
+                                <p>Immersive audio experiences</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-visual">
+                    <div class="skill-bars">
+                        <div class="skill">
+                            <div class="skill-info">
+                                <span>Web Animation</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill">
+                            <div class="skill-info">
+                                <span>UI/UX Design</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill">
+                            <div class="skill-info">
+                                <span>Sound Design</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our <span class="highlight">Services</span></h2>
+                <p class="section-subtitle">What we excel at</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tv"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Animated Websites</h3>
+                        <p>Interactive websites with scroll, hover, and click animations.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Scroll Animations</li>
+                            <li><i class="fas fa-check"></i> Parallax Effects</li>
+                            <li><i class="fas fa-check"></i> 3D Transforms</li>
+                        </ul>
+                    </div>
+                    <div class="service-hover">
+                        <a href="#" class="service-btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Mobile Apps</h3>
+                        <p>Native and cross-platform apps with smooth animations.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> React Native</li>
+                            <li><i class="fas fa-check"></i> Flutter</li>
+                            <li><i class="fas fa-check"></i> Gesture Controls</li>
+                        </ul>
+                    </div>
+                    <div class="service-hover">
+                        <a href="#" class="service-btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Interactive UI</h3>
+                        <p>Engaging user interfaces with micro-interactions.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Hover Effects</li>
+                            <li><i class="fas fa-check"></i> Sound Feedback</li>
+                            <li><i class="fas fa-check"></i> Page Transitions</li>
+                        </ul>
+                    </div>
+                    <div class="service-hover">
+                        <a href="#" class="service-btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our <span class="highlight">Work</span></h2>
+                <p class="section-subtitle">Recent animated projects</p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <h4>E-Commerce Animation</h4>
+                            <p>Product animations</p>
+                            <a href="#" class="portfolio-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <h4>Portfolio Website</h4>
+                            <p>Scroll animations</p>
+                            <a href="#" class="portfolio-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <h4>Business Dashboard</h4>
+                            <p>Animated charts</p>
+                            <a href="#" class="portfolio-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
+                <p class="section-subtitle">Let's create something amazing</p>
+            </div>
+            
+            <div class="contact-content">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                        <div class="input-line"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                        <div class="input-line"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="tel" placeholder="Phone Number">
+                        <div class="input-line"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <div class="input-line"></div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+                
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Call Us</h4>
+                            <p>+91 98765 43210</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Email Us</h4>
+                            <p>contact@adityadevelopers.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Visit Us</h4>
+                            <p>Your City, India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <span class="logo-text">Aditya</span>
+                        <span class="logo-highlight">Developers</span>
+                    </div>
+                    <p>Creating animated digital experiences since 2020</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Aditya Developers. All rights reserved.</p>
+                <div class="back-to-top" id="backToTop">
+                    <i class="fas fa-arrow-up"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="fab-container">
+        <a href="https://wa.me/919876543210" class="fab whatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:+919876543210" class="fab phone">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="clickSound" preload="auto">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3" type="audio/mpeg">
+    </audio>
+    
+    <audio id="hoverSound" preload="auto">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-hover-click-1118.mp3" type="audio/mpeg">
+    </audio>
+    
+    <audio id="typeSound" preload="auto">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-keyboard-typing-1386.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
