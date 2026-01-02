@@ -15,47 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 500);
     }, 1000);
     
-    // ========== SOUND SYSTEM ==========
-    const clickSound = document.getElementById('clickSound');
-    const hoverSound = document.getElementById('hoverSound');
-    const typeSound = document.getElementById('typeSound');
-    const soundToggle = document.getElementById('soundToggle');
-    let soundEnabled = true;
-    
-    // Sound toggle
-    soundToggle.addEventListener('click', function() {
-        soundEnabled = !soundEnabled;
-        this.classList.toggle('muted', !soundEnabled);
-        playSound(clickSound);
-    });
-    
-    // Play sound function
-    function playSound(soundElement) {
-        if (!soundEnabled) return;
-        
-        try {
-            soundElement.currentTime = 0;
-            soundElement.play().catch(e => {
-                console.log("Sound play failed:", e);
-            });
-        } catch (error) {
-            console.log("Sound error:", error);
-        }
-    }
-    
-    // Sound triggers
-    document.querySelectorAll('a, button, .nav-link, .btn').forEach(element => {
-        element.addEventListener('click', () => playSound(clickSound));
-        element.addEventListener('mouseenter', () => playSound(hoverSound));
-    });
-    
-    document.querySelectorAll('input, textarea').forEach(element => {
-        element.addEventListener('focus', () => playSound(typeSound));
-        element.addEventListener('input', () => {
-            if (Math.random() > 0.7) playSound(typeSound);
-        });
-    });
-    
     // ========== CUSTOM CURSOR ==========
     const cursorDot = document.querySelector('.cursor-dot');
     const cursorOutline = document.querySelector('.cursor-outline');
@@ -75,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         // Cursor effects
-        document.querySelectorAll('a, button, .service-card, .portfolio-item').forEach(element => {
+        document.querySelectorAll('a, button, .service-card').forEach(element => {
             element.addEventListener('mouseenter', () => {
                 cursorDot.style.transform = 'scale(2)';
                 cursorOutline.style.transform = 'scale(1.5)';
@@ -98,7 +57,6 @@ document.addEventListener('DOMContentLoaded', function() {
     menuToggle.addEventListener('click', function() {
         navLinks.classList.toggle('active');
         hamburger.classList.toggle('active');
-        playSound(clickSound);
     });
     
     // Close menu when clicking a link
@@ -231,28 +189,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // ========== TYPEWRITER EFFECT ==========
-    function initTypewriter() {
-        const codeLines = document.querySelectorAll('.code-line');
-        
-        codeLines.forEach((line, index) => {
-            const text = line.textContent;
-            line.textContent = '';
-            
-            setTimeout(() => {
-                let i = 0;
-                const typeChar = () => {
-                    if (i < text.length) {
-                        line.textContent += text.charAt(i);
-                        i++;
-                        setTimeout(typeChar, 50);
-                    }
-                };
-                typeChar();
-            }, index * 500 + 1000);
-        });
-    }
-    
     // ========== BACK TO TOP ==========
     const backToTop = document.getElementById('backToTop');
     
@@ -271,7 +207,6 @@ document.addEventListener('DOMContentLoaded', function() {
             top: 0,
             behavior: 'smooth'
         });
-        playSound(clickSound);
     });
     
     // ========== FORM HANDLING ==========
@@ -296,9 +231,6 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Reset form
             this.reset();
-            
-            // Play sound
-            playSound(clickSound);
         });
     }
     
@@ -319,20 +251,10 @@ document.addEventListener('DOMContentLoaded', function() {
         serviceCards.forEach(card => {
             card.addEventListener('mouseenter', () => {
                 card.style.transform = 'translateY(-10px)';
-                playSound(hoverSound);
             });
             
             card.addEventListener('mouseleave', () => {
                 card.style.transform = 'translateY(0)';
-            });
-        });
-        
-        // Portfolio items
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-        
-        portfolioItems.forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                playSound(hoverSound);
             });
         });
         
@@ -350,25 +272,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // ========== SCROLL SOUND EFFECT ==========
-    let scrollTimeout;
-    window.addEventListener('scroll', () => {
-        clearTimeout(scrollTimeout);
-        
-        scrollTimeout = setTimeout(() => {
-            if (Math.random() > 0.8 && soundEnabled) {
-                playSound(hoverSound);
-            }
-        }, 100);
-    });
-    
     // ========== INITIALIZE ALL ANIMATIONS ==========
     function initAllAnimations() {
         createParticles();
         animateCounters();
         animateSkillBars();
         initScrollAnimations();
-        initTypewriter();
         animateFloatingShapes();
         initHoverEffects();
         
@@ -401,11 +310,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // ========== KEYBOARD SHORTCUTS ==========
     document.addEventListener('keydown', (e) => {
-        // Mute/unmute with 'M' key
-        if (e.key === 'm' || e.key === 'M') {
-            soundToggle.click();
-        }
-        
         // Escape to close menu
         if (e.key === 'Escape' && navLinks.classList.contains('active')) {
             navLinks.classList.remove('active');
@@ -430,7 +334,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ========== PERFORMANCE OPTIMIZATION ==========
-    // Debounce scroll events
     let scrollTimer;
     window.addEventListener('scroll', () => {
         clearTimeout(scrollTimer);
@@ -441,6 +344,5 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // ========== INITIALIZATION COMPLETE ==========
     console.log('🎨 Aditya Developers Website Loaded Successfully!');
-    console.log('🔊 Sound: ' + (soundEnabled ? 'ON' : 'OFF'));
     console.log('📱 Responsive: ' + (window.innerWidth <= 768 ? 'Mobile' : 'Desktop'));
 });
