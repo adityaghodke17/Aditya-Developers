@@ -9,6 +9,76 @@ const navMenu = document.querySelector('.nav-menu');
 const backToTop = document.getElementById('backToTop');
 const navLinks = document.querySelectorAll('.nav-link');
 
+// Custom Cursor Elements
+const cursor = document.querySelector('.cursor');
+const cursorFollower = document.querySelector('.cursor-follower');
+
+// Custom Cursor Logic
+if (cursor && cursorFollower) {
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+        
+        setTimeout(() => {
+            cursorFollower.style.left = e.clientX + 'px';
+            cursorFollower.style.top = e.clientY + 'px';
+        }, 100);
+    });
+    
+    // Hover effects for interactive elements
+    const interactiveElements = document.querySelectorAll('a, button, .btn, .nav-link, input, select, textarea, .service-card, .feature-card, .stat-box');
+    
+    interactiveElements.forEach(element => {
+        element.addEventListener('mouseenter', () => {
+            cursor.classList.add('hover');
+            cursorFollower.classList.add('hover');
+        });
+        
+        element.addEventListener('mouseleave', () => {
+            cursor.classList.remove('hover');
+            cursorFollower.classList.remove('hover');
+        });
+    });
+    
+    // Click effect
+    document.addEventListener('mousedown', () => {
+        cursor.classList.add('click');
+    });
+    
+    document.addEventListener('mouseup', () => {
+        cursor.classList.remove('click');
+    });
+    
+    // Ripple effect on click
+    document.addEventListener('click', (e) => {
+        const ripple = document.createElement('div');
+        ripple.classList.add('ripple');
+        ripple.style.left = e.clientX + 'px';
+        ripple.style.top = e.clientY + 'px';
+        document.body.appendChild(ripple);
+        
+        setTimeout(() => {
+            ripple.remove();
+        }, 600);
+    });
+    
+    // Particle effect
+    const particlesContainer = document.querySelector('.particles');
+    if (particlesContainer) {
+        for (let i = 0; i < 15; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.width = Math.random() * 5 + 2 + 'px';
+            particle.style.height = particle.style.width;
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.opacity = Math.random() * 0.5 + 0.2;
+            particlesContainer.appendChild(particle);
+        }
+    }
+}
+
 // Mobile Menu Toggle
 if (menuToggle && navMenu) {
     menuToggle.addEventListener('click', () => {
@@ -233,6 +303,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const yearElement = document.querySelector('.footer-bottom p');
     if (yearElement) {
         yearElement.innerHTML = '&copy; 2016 Aditya Developers. All rights reserved.';
+    }
+    
+    // Check if on mobile and hide custom cursor
+    if (window.innerWidth <= 768) {
+        if (cursor) cursor.style.display = 'none';
+        if (cursorFollower) cursorFollower.style.display = 'none';
     }
 });
 
