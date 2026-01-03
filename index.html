@@ -3,394 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aditya Developers | Building Your Future</title>
-    
-    <!-- Fonts & Icons -->
+    <title>April Zameen - Property Solutions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="#">
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loading-screen">
-        <div class="loader">
-            <div class="loader-text">
-                <span class="letter">A</span>
-                <span class="letter">D</span>
-                <span class="letter">I</span>
-                <span class="letter">T</span>
-                <span class="letter">Y</span>
-                <span class="letter">A</span>
-            </div>
-            <div class="loading-bar">
-                <div class="loading-progress"></div>
-            </div>
-        </div>
-    </div>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919878543200" class="floating-whatsapp" target="_blank" id="whatsappBtn">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-    <!-- Custom Cursor -->
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
-
-    <!-- Particle Background -->
-    <div class="particles" id="particles"></div>
-
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="logo">
-            <span class="logo-text uppercase">ADITYA</span>
-            <span class="logo-highlight uppercase">DEVELOPERS</span>
-            <div class="logo-dot"></div>
-        </div>
-        
-        <div class="menu-toggle" id="menuToggle">
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-        
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#home" class="nav-link">Home</a></li>
-            <li><a href="#about" class="nav-link">About</a></li>
-            <li><a href="#services" class="nav-link">Services</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-            <li><a href="#" class="nav-btn">Get Quote</a></li>
-        </ul>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-badge animate-pop">
-                <i class="fas fa-star"></i>
-                <span>Aditya Developers</span>
-            </div>
+    <div class="container">
+        <!-- Main Header -->
+        <header class="main-header">
+            <h1>April Zameen, <span>Apna Future</span></h1>
+            <p>Specializing in creating exceptional property solutions and real estate experiences that drive business growth.</p>
             
-            <h1 class="hero-title">
-                <span class="title-line">We Create</span>
-                <span class="title-static-text">Apni Zameen, Apna Future</span>
-                <span class="title-line">With Excellence</span>
-            </h1>
-            
-            <div class="hero-buttons">
-                <a href="#services" class="btn btn-primary">
-                    <span>View Our Work</span>
-                    <i class="fas fa-arrow-right"></i>
-                    <div class="btn-shine"></div>
-                </a>
-                <a href="#contact" class="btn btn-secondary">
-                    <span>Start Project</span>
-                </a>
-            </div>
-            
-            <div class="hero-stats">
-                <div class="stat">
-                    <h3 data-count="50">0</h3>
-                    <p>Projects Done</p>
+            <div class="stats-container">
+                <div class="stat-box">
+                    <span class="stat-number">50</span>
+                    <span class="stat-label">Projects Done</span>
                 </div>
-                <div class="stat">
-                    <h3 data-count="98">0</h3>
-                    <p>Happy Clients</p>
+                <div class="stat-box">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label">Happy Clients</span>
                 </div>
-                <div class="stat">
-                    <h3 data-count="5">0</h3>
-                    <p>Years Experience</p>
+                <div class="stat-box">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">Years Experience</span>
                 </div>
             </div>
-        </div>
-        
-        <div class="hero-visual">
-            <div class="floating-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
-                <div class="shape shape-4"></div>
-                <div class="shape shape-5"></div>
-            </div>
-        </div>
-    </section>
+        </header>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
+        <!-- Features Section -->
+        <section class="features-section">
             <div class="section-header">
-                <h2 class="section-title">About <span class="highlight">Us</span></h2>
-                <p class="section-subtitle">We bring creativity and technology together</p>
-                <div class="section-line"></div>
+                <h2>Building Property Futures</h2>
+                <p>Your trusted partner in property and land dealings</p>
             </div>
             
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Building <span class="text-gradient">Digital Futures</span></h3>
-                    <p>Specializing in creating exceptional web experiences and real estate solutions that drive business growth.</p>
-                    
-                    <div class="features">
-                        <div class="feature">
-                            <div class="feature-icon">
-                                <i class="fas fa-bolt"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Fast Delivery</h4>
-                                <p>Quick project turnaround</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature">
-                            <div class="feature-icon">
-                                <i class="fas fa-mobile-alt"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Mobile First</h4>
-                                <p>Perfect on all devices</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature">
-                            <div class="feature-icon">
-                                <i class="fas fa-headphones"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h4>24/7 Support</h4>
-                                <p>Always available for you</p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3><i class="fas fa-bolt"></i> Fast Delivery</h3>
+                    <p>Quick project turnaround and documentation processing with complete transparency</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-mobile-alt"></i> <strong>Mobile First</strong> - Accessible on all devices</li>
+                        <li><i class="fab fa-instagram"></i> Follow our Instagram for property updates</li>
+                        <li><i class="fab fa-facebook"></i> Visit our Facebook for customer reviews</li>
+                    </ul>
                 </div>
                 
-                <div class="about-visual">
-                    <div class="skill-bars">
-                        <div class="skill">
-                            <div class="skill-info">
-                                <span>Web Development</span>
-                                <span>95%</span>
+                <div class="feature-card">
+                    <h3><i class="fas fa-headset"></i> 24/7 Support</h3>
+                    <p>Always available for your property queries and concerns with instant response</p>
+                    
+                    <div class="btn-group">
+                        <a href="https://wa.me/919878543200" class="btn whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp Instant
+                        </a>
+                        
+                        <a href="tel:+919878543200" class="btn call-btn">
+                            <i class="fas fa-phone"></i> Call Now
+                        </a>
+                    </div>
+                    
+                    <p class="info-note">
+                        <i class="fas fa-info-circle"></i> One click to call or message. Your property solution is just a tap away!
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3><i class="fas fa-chart-line"></i> Property Expertise</h3>
+                    <p>Our proven expertise in land and property dealings with verified results</p>
+                    
+                    <div class="progress-container">
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span>Customer Trust</span>
+                                <span><strong>95%</strong></span>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="95"></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="95"></div>
                             </div>
                         </div>
                         
-                        <div class="skill">
-                            <div class="skill-info">
-                                <span>UI/UX Design</span>
-                                <span>90%</span>
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span>Land Research Accuracy</span>
+                                <span><strong>90%</strong></span>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="90"></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="90"></div>
                             </div>
                         </div>
                         
-                        <div class="skill">
-                            <div class="skill-info">
+                        <div class="progress-item">
+                            <div class="progress-header">
                                 <span>Client Satisfaction</span>
-                                <span>98%</span>
+                                <span><strong>98%</strong></span>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="98"></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="98"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
+        <!-- Services Section -->
+        <section class="services-section">
             <div class="section-header">
-                <h2 class="section-title">Our <span class="highlight">Services</span></h2>
-                <p class="section-subtitle">What we excel at</p>
+                <h2>Our Property Services</h2>
+                <p>Comprehensive solutions for all your property needs</p>
             </div>
             
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
+                    <div class="service-header">
+                        <h3>Property Listings</h3>
                     </div>
-                    <div class="service-content">
-                        <h3>Web Development</h3>
-                        <p>Custom websites with modern technologies and responsive design.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> HTML/CSS/JavaScript</li>
-                            <li><i class="fas fa-check"></i> React & Vue.js</li>
-                            <li><i class="fas fa-check"></i> PHP & WordPress</li>
-                        </ul>
-                    </div>
-                    <div class="service-hover">
-                        <a href="#contact" class="service-btn">Get This Service</a>
+                    <div class="service-body">
+                        <p>Comprehensive property listings with verified details, photos, virtual tours and complete documentation support.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Residential</span>
+                            <span class="tech-tag">Commercial</span>
+                            <span class="tech-tag">Agricultural</span>
+                            <span class="tech-tag">Legal Check</span>
+                            <span class="tech-tag">Site Visit</span>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
+                    <div class="service-header">
+                        <h3>Property Documentation</h3>
                     </div>
-                    <div class="service-content">
-                        <h3>Mobile Apps</h3>
-                        <p>Native and cross-platform mobile applications.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Android & iOS</li>
-                            <li><i class="fas fa-check"></i> React Native</li>
-                            <li><i class="fas fa-check"></i> Flutter</li>
-                        </ul>
-                    </div>
-                    <div class="service-hover">
-                        <a href="#contact" class="service-btn">Get This Service</a>
+                    <div class="service-body">
+                        <p>End-to-end documentation support including registration, mutation, legal clearance and government approvals.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Title Verification</span>
+                            <span class="tech-tag">Registration</span>
+                            <span class="tech-tag">Mutation</span>
+                            <span class="tech-tag">Legal Support</span>
+                            <span class="tech-tag">Approvals</span>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-paint-brush"></i>
+                    <div class="service-header">
+                        <h3>Property Consulting</h3>
                     </div>
-                    <div class="service-content">
-                        <h3>UI/UX Design</h3>
-                        <p>Beautiful and user-friendly interface designs.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Figma & Adobe XD</li>
-                            <li><i class="fas fa-check"></i> Prototyping</li>
-                            <li><i class="fas fa-check"></i> User Testing</li>
-                        </ul>
-                    </div>
-                    <div class="service-hover">
-                        <a href="#contact" class="service-btn">Get This Service</a>
+                    <div class="service-body">
+                        <p>Expert consulting for property investment, valuation, market analysis and future growth potential.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Valuation</span>
+                            <span class="tech-tag">Market Research</span>
+                            <span class="tech-tag">Investment Advice</span>
+                            <span class="tech-tag">Growth Analysis</span>
+                            <span class="tech-tag">Negotiation</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
-                <p class="section-subtitle">Let's create something amazing together</p>
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="section-header" style="margin-top: 0; margin-bottom: 30px;">
+                <h2>Get In Touch</h2>
+                <p>Reach out to us for any property queries or land requirements</p>
             </div>
             
-            <div class="contact-content">
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
-                        <div class="input-line"></div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
-                        <div class="input-line"></div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="tel" placeholder="Phone Number">
-                        <div class="input-line"></div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
-                        <div class="input-line"></div>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary">
-                        <span>Send Message</span>
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
-                </form>
-                
+            <div class="contact-grid">
                 <div class="contact-info">
-                    <div class="info-card">
-                        <div class="info-icon">
+                    <h3>Contact Details</h3>
+                    <p>We're here to help you with all your property needs. Contact us for personalized assistance.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
                             <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone Numbers</h4>
+                                <p>+91 98785 43200</p>
+                                <p>+91 63573 08369</p>
+                            </div>
                         </div>
-                        <div class="info-content">
-                            <h4>Call Us</h4>
-                            <p>+91 98765 43210</p>
-                        </div>
-                    </div>
-                    
-                    <div class="info-card">
-                        <div class="info-icon">
+                        
+                        <div class="contact-item">
                             <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>contact@aprilzameen.com</p>
+                            </div>
                         </div>
-                        <div class="info-content">
-                            <h4>Email Us</h4>
-                            <p>contact@adityadevelopers.com</p>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Visit Us</h4>
+                                <p>Sama Road, Vadodara, Gujarat, India</p>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="info-content">
-                            <h4>Visit Us</h4>
-                            <p>Your City, India</p>
-                        </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <div class="logo">
-                        <span class="logo-text uppercase">ADITYA</span>
-                        <span class="logo-highlight uppercase">DEVELOPERS</span>
-                    </div>
-                    <p>Creating digital excellence since 2020</p>
                 </div>
                 
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-social">
-                    <h4>Follow Us</h4>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                    </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <input type="text" placeholder="Your Name" required id="name">
+                        <input type="email" placeholder="Your Email" required id="email">
+                        <input type="tel" placeholder="Phone Number" required id="phone">
+                        <textarea placeholder="Your Property Requirements..." required id="message"></textarea>
+                        <button type="submit" class="btn" id="submitBtn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2023 Aditya Developers. All rights reserved.</p>
-                <div class="back-to-top" id="backToTop">
-                    <i class="fas fa-arrow-up"></i>
-                </div>
-            </div>
-        </div>
-    </footer>
+        </section>
 
-    <!-- Floating Action Buttons -->
-    <div class="fab-container">
-        <a href="https://wa.me/919876543210" class="fab whatsapp" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="tel:+919876543210" class="fab phone">
-            <i class="fas fa-phone"></i>
-        </a>
+        <!-- Footer -->
+        <footer>
+            <p><i class="fas fa-home"></i> <strong>April Zameen - Your Trusted Property Partner</strong></p>
+            <p>&copy; 2023 April Zameen. All rights reserved.</p>
+            <p class="footer-contact">Vadodara, Gujarat | +91 98785 43200</p>
+            <p class="footer-tagline">Property Solutions | Land Dealings | Real Estate Consulting</p>
+        </footer>
     </div>
 
-    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
