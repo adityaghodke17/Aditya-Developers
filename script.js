@@ -1,4 +1,4 @@
-// Main JavaScript File - All Mouse Effects Included
+// Main JavaScript File - WhatsApp Form Integration
 
 // DOM Elements
 const contactForm = document.getElementById('contactForm');
@@ -8,148 +8,6 @@ const menuToggle = document.getElementById('menuToggle');
 const navMenu = document.querySelector('.nav-menu');
 const backToTop = document.getElementById('backToTop');
 const navLinks = document.querySelectorAll('.nav-link');
-const progressFills = document.querySelectorAll('.progress-fill');
-const featureCards = document.querySelectorAll('.feature-card');
-const serviceCards = document.querySelectorAll('.service-card');
-
-// ============================================
-// MOUSE EFFECTS START
-// ============================================
-
-class MouseEffects {
-    constructor() {
-        this.cursor = document.querySelector('.cursor');
-        this.cursorFollower = document.querySelector('.cursor-follower');
-        this.mouseX = 0;
-        this.mouseY = 0;
-        this.posX = 0;
-        this.posY = 0;
-        this.init();
-    }
-    
-    init() {
-        if (!this.cursor || !this.cursorFollower || window.innerWidth <= 768) return;
-        
-        // Mouse move listener
-        document.addEventListener('mousemove', (e) => {
-            this.mouseX = e.clientX;
-            this.mouseY = e.clientY;
-            this.updateCursor();
-        });
-        
-        // Click effects
-        document.addEventListener('click', (e) => {
-            this.createClickEffect(e.clientX, e.clientY);
-            this.createParticles(e.clientX, e.clientY, 8);
-        });
-        
-        // Hover effects
-        this.initHoverEffects();
-        
-        // Animation loop
-        this.animate();
-    }
-    
-    updateCursor() {
-        // Smooth follow for cursor follower
-        this.posX += (this.mouseX - this.posX) / 8;
-        this.posY += (this.mouseY - this.posY) / 8;
-        
-        this.cursor.style.left = this.mouseX + 'px';
-        this.cursor.style.top = this.mouseY + 'px';
-        
-        this.cursorFollower.style.left = this.posX + 'px';
-        this.cursorFollower.style.top = this.posY + 'px';
-    }
-    
-    createClickEffect(x, y) {
-        // Ripple effect
-        const ripple = document.createElement('div');
-        ripple.className = 'ripple';
-        ripple.style.left = x + 'px';
-        ripple.style.top = y + 'px';
-        document.body.appendChild(ripple);
-        
-        setTimeout(() => ripple.remove(), 600);
-        
-        // Cursor click animation
-        this.cursor.classList.add('click');
-        setTimeout(() => this.cursor.classList.remove('click'), 300);
-    }
-    
-    createParticles(x, y, count = 5) {
-        for (let i = 0; i < count; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.width = Math.random() * 20 + 5 + 'px';
-            particle.style.height = particle.style.width;
-            particle.style.left = x + 'px';
-            particle.style.top = y + 'px';
-            
-            // Random color from theme
-            const colors = ['#1a237e', '#ff9800', '#4caf50', '#2196f3'];
-            const color = colors[Math.floor(Math.random() * colors.length)];
-            particle.style.background = color;
-            particle.style.opacity = '0.5';
-            
-            document.body.appendChild(particle);
-            
-            // Random animation
-            const angle = Math.random() * Math.PI * 2;
-            const distance = Math.random() * 100 + 50;
-            const duration = Math.random() * 1000 + 500;
-            
-            particle.animate([
-                { transform: 'translate(0, 0) scale(1)', opacity: 0.5 },
-                { transform: `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px) scale(0)`, opacity: 0 }
-            ], {
-                duration: duration,
-                easing: 'cubic-bezier(0.215, 0.610, 0.355, 1)'
-            });
-            
-            setTimeout(() => particle.remove(), duration);
-        }
-    }
-    
-    initHoverEffects() {
-        const hoverElements = document.querySelectorAll(
-            'a, button, .feature-card, .service-card, .stat-box, .tech-tag, .social-link, .btn, .nav-link'
-        );
-        
-        hoverElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                this.cursor.classList.add('hover');
-                this.cursorFollower.classList.add('hover');
-                
-                // Create hover particles
-                if (el.classList.contains('btn') || el.classList.contains('feature-card') || el.classList.contains('service-card')) {
-                    const rect = el.getBoundingClientRect();
-                    this.createParticles(rect.left + rect.width/2, rect.top + rect.height/2, 3);
-                }
-            });
-            
-            el.addEventListener('mouseleave', () => {
-                this.cursor.classList.remove('hover');
-                this.cursorFollower.classList.remove('hover');
-            });
-        });
-    }
-    
-    animate() {
-        // Continuous animation loop for cursor effects
-        requestAnimationFrame(() => this.animate());
-        
-        // Add subtle pulse to cursor follower
-        if (this.cursorFollower) {
-            const scale = 1 + Math.sin(Date.now() * 0.002) * 0.1;
-            this.cursorFollower.style.transform = `translate(-50%, -50%) scale(${scale})`;
-        }
-    }
-}
-
-// ============================================
-// MOUSE EFFECTS END
-// ============================================
 
 // Mobile Menu Toggle
 if (menuToggle && navMenu) {
@@ -160,7 +18,6 @@ if (menuToggle && navMenu) {
             : '<i class="fas fa-bars"></i>';
     });
     
-    // Close menu when clicking a link
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
@@ -169,7 +26,7 @@ if (menuToggle && navMenu) {
     });
 }
 
-// Nav link active state on scroll
+// Nav link active state
 function updateActiveNavLink() {
     const scrollPos = window.scrollY + 100;
     
@@ -228,107 +85,118 @@ const progressObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.5 });
 
-// Form submission
+// WhatsApp Form Integration
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
         // Get form data
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
         const service = document.getElementById('service').value;
-        const message = document.getElementById('message').value;
+        const message = document.getElementById('message').value.trim();
+        
+        // Validation
+        if (!name || !email || !phone || !service || !message) {
+            alert('Please fill all required fields!');
+            return;
+        }
         
         // Animation on button
         const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Preparing...';
         submitBtn.disabled = true;
         
-        // Simulate API call
+        // Create WhatsApp message
+        const whatsappMessage = `🚀 *NEW PROPERTY QUERY* 🚀%0A%0A` +
+                               `*Name:* ${name}%0A` +
+                               `*Email:* ${email}%0A` +
+                               `*Phone:* ${phone}%0A` +
+                               `*Service Required:* ${service}%0A` +
+                               `*Property Requirements:*%0A${message}%0A%0A` +
+                               `_Sent from Aditya Developers website_`;
+        
+        // WhatsApp URL
+        const whatsappURL = `https://wa.me/916357308369?text=${whatsappMessage}`;
+        
+        // Simulate processing
         setTimeout(() => {
-            // Success animation
-            submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-            submitBtn.style.background = 'linear-gradient(135deg, #4caf50 0%, #2e7d32 100%)';
+            // Reset button
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
             
-            // Create success message
-            const successMessage = `
-                ✅ Thank you ${name}!
-                
-                Property Service: ${service}
-                
-                We have received your property query.
-                Our team will contact you at ${phone} within 24 hours.
-                
-                You will also receive a confirmation email at ${email}.
-            `;
+            // Open WhatsApp in new tab
+            window.open(whatsappURL, '_blank');
             
-            // Show success modal
-            showSuccessModal(successMessage);
+            // Show success message
+            showSuccessMessage(name, phone, service);
             
-            // Reset form after 3 seconds
+            // Reset form after 2 seconds
             setTimeout(() => {
                 contactForm.reset();
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-                submitBtn.style.background = '';
-            }, 3000);
-        }, 1500);
+            }, 2000);
+            
+        }, 1000);
     });
 }
 
-// Success modal function
-function showSuccessModal(message) {
-    const modal = document.createElement('div');
-    modal.className = 'success-modal';
-    modal.innerHTML = `
-        <div class="modal-content">
-            <div class="modal-header">
-                <i class="fas fa-check-circle"></i>
-                <h3>Query Submitted Successfully!</h3>
-                <button class="modal-close">&times;</button>
+// Show success message
+function showSuccessMessage(name, phone, service) {
+    const successHTML = `
+        <div class="success-message">
+            <div class="success-icon">
+                <i class="fab fa-whatsapp"></i>
             </div>
-            <div class="modal-body">
-                <p>${message.replace(/\n/g, '<br>')}</p>
+            <h3>Message Ready!</h3>
+            <p>Your query has been prepared for WhatsApp.</p>
+            <div class="success-info">
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Phone:</strong> ${phone}</p>
+                <p><strong>Service:</strong> ${service}</p>
             </div>
-            <div class="modal-footer">
-                <button class="modal-ok">OK</button>
-            </div>
+            <p class="success-note">WhatsApp will open automatically. If it doesn't, please click the WhatsApp button.</p>
         </div>
     `;
     
+    const successDiv = document.createElement('div');
+    successDiv.className = 'success-overlay';
+    successDiv.innerHTML = successHTML;
+    
     // Add styles
-    modal.style.cssText = `
+    successDiv.style.cssText = `
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0,0,0,0.7);
+        background: rgba(0,0,0,0.8);
         display: flex;
         align-items: center;
         justify-content: center;
         z-index: 10000;
         animation: fadeIn 0.3s;
+        padding: 20px;
     `;
     
-    document.body.appendChild(modal);
+    document.body.appendChild(successDiv);
     
-    // Close buttons
-    const closeBtn = modal.querySelector('.modal-close');
-    const okBtn = modal.querySelector('.modal-ok');
+    // Auto close after 5 seconds
+    setTimeout(() => {
+        successDiv.style.animation = 'fadeOut 0.3s';
+        setTimeout(() => {
+            if (successDiv.parentElement) {
+                successDiv.remove();
+            }
+        }, 300);
+    }, 5000);
     
-    const closeModal = () => {
-        modal.style.animation = 'fadeOut 0.3s';
-        setTimeout(() => modal.remove(), 300);
-    };
-    
-    closeBtn.addEventListener('click', closeModal);
-    okBtn.addEventListener('click', closeModal);
-    
-    // Close on outside click
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
+    // Click to close
+    successDiv.addEventListener('click', (e) => {
+        if (e.target === successDiv) {
+            successDiv.style.animation = 'fadeOut 0.3s';
+            setTimeout(() => successDiv.remove(), 300);
+        }
     });
 }
 
@@ -339,9 +207,8 @@ document.querySelectorAll('.contact-item').forEach(item => {
         item.addEventListener('click', function() {
             const phoneNumber = this.querySelector('p').textContent.trim();
             navigator.clipboard.writeText(phoneNumber).then(() => {
-                // Show copied message
                 const originalHTML = this.innerHTML;
-                this.innerHTML = '<i class="fas fa-check"></i> <div><h4>Copied!</h4><p>Phone number copied to clipboard</p></div>';
+                this.innerHTML = '<i class="fas fa-check"></i> <div><h4>Copied!</h4><p>Phone number copied</p></div>';
                 this.style.background = 'linear-gradient(135deg, #4caf50, #2e7d32)';
                 
                 setTimeout(() => {
@@ -353,70 +220,19 @@ document.querySelectorAll('.contact-item').forEach(item => {
     }
 });
 
-// Social media click handlers
-document.querySelectorAll('.social-link').forEach(link => {
-    if (link.href.includes('instagram') || link.href.includes('facebook')) {
-        link.addEventListener('click', function(e) {
-            if (!this.href.includes('adityadevelopersglobal')) {
-                e.preventDefault();
-                alert('This is a demo link. In production, this would open the social media page.');
-            }
-        });
-    }
-});
-
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
-    // Add loaded class
     document.body.classList.add('loaded');
     
-    // Initialize mouse effects (only on desktop)
-    if (window.innerWidth > 768) {
-        new MouseEffects();
-    }
-    
-    // Add welcome particles
-    setTimeout(() => {
-        for (let i = 0; i < 10; i++) {
-            setTimeout(() => {
-                const x = Math.random() * window.innerWidth;
-                const y = Math.random() * window.innerHeight;
-                
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.width = '20px';
-                particle.style.height = '20px';
-                particle.style.left = x + 'px';
-                particle.style.top = y + 'px';
-                particle.style.background = 'radial-gradient(circle, #1a237e, #ff9800)';
-                particle.style.opacity = '0.3';
-                
-                document.body.appendChild(particle);
-                
-                particle.animate([
-                    { transform: 'scale(0)', opacity: 0.3 },
-                    { transform: 'scale(1)', opacity: 0 },
-                    { transform: 'scale(0)', opacity: 0 }
-                ], {
-                    duration: 1500,
-                    easing: 'ease-out'
-                });
-                
-                setTimeout(() => particle.remove(), 1500);
-            }, i * 100);
-        }
-    }, 500);
-    
     // Observe elements for animation
-    featureCards.forEach(card => observer.observe(card));
-    serviceCards.forEach(card => observer.observe(card));
+    document.querySelectorAll('.feature-card, .service-card').forEach(card => observer.observe(card));
     document.querySelectorAll('.progress-item').forEach(item => progressObserver.observe(item));
     
     // Set current year in footer
     const currentYear = new Date().getFullYear();
     const yearElement = document.querySelector('.footer-bottom p');
     if (yearElement) {
-        yearElement.innerHTML = yearElement.innerHTML.replace('2016', currentYear);
+        yearElement.innerHTML = '&copy; 2016 Aditya Developers. All rights reserved.';
     }
 });
 
@@ -430,9 +246,9 @@ window.addEventListener('scroll', () => {
 updateActiveNavLink();
 updateBackToTop();
 
-// Add CSS for modal
-const modalStyles = document.createElement('style');
-modalStyles.textContent = `
+// Add CSS for success message
+const successStyles = document.createElement('style');
+successStyles.textContent = `
     @keyframes fadeIn {
         from { opacity: 0; }
         to { opacity: 1; }
@@ -443,12 +259,15 @@ modalStyles.textContent = `
         to { opacity: 0; }
     }
     
-    .success-modal .modal-content {
+    .success-message {
         background: white;
         border-radius: 20px;
-        width: 90%;
+        padding: 40px;
+        text-align: center;
         max-width: 500px;
+        width: 100%;
         animation: slideUp 0.4s;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.3);
     }
     
     @keyframes slideUp {
@@ -456,58 +275,48 @@ modalStyles.textContent = `
         to { transform: translateY(0); opacity: 1; }
     }
     
-    .success-modal .modal-header {
-        background: linear-gradient(135deg, #4caf50, #2e7d32);
-        color: white;
-        padding: 25px;
-        border-radius: 20px 20px 0 0;
+    .success-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #25D366, #128C7E);
+        border-radius: 50%;
         display: flex;
         align-items: center;
-        justify-content: space-between;
-    }
-    
-    .success-modal .modal-header i {
+        justify-content: center;
+        margin: 0 auto 25px;
+        color: white;
         font-size: 2.5rem;
     }
     
-    .success-modal .modal-header h3 {
-        margin: 0;
-        font-size: 1.5rem;
+    .success-message h3 {
+        color: #1a237e;
+        margin-bottom: 15px;
+        font-size: 1.8rem;
     }
     
-    .success-modal .modal-header button {
-        background: none;
-        border: none;
-        color: white;
-        font-size: 2rem;
-        cursor: pointer;
+    .success-message p {
+        color: #666;
+        margin-bottom: 20px;
+        line-height: 1.6;
     }
     
-    .success-modal .modal-body {
-        padding: 30px;
-        line-height: 1.8;
+    .success-info {
+        background: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 25px 0;
+        text-align: left;
     }
     
-    .success-modal .modal-footer {
-        padding: 20px 30px;
-        text-align: right;
-        border-top: 1px solid #eee;
+    .success-info p {
+        margin: 10px 0;
+        color: #333;
     }
     
-    .success-modal .modal-footer button {
-        background: var(--primary);
-        color: white;
-        border: none;
-        padding: 12px 30px;
-        border-radius: 50px;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: all 0.3s;
-    }
-    
-    .success-modal .modal-footer button:hover {
-        background: var(--secondary);
-        transform: translateY(-3px);
+    .success-note {
+        font-size: 0.9rem;
+        color: #666;
+        font-style: italic;
     }
 `;
-document.head.appendChild(modalStyles);
+document.head.appendChild(successStyles);
