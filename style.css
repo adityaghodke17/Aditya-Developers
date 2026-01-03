@@ -4,7 +4,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    cursor: none !important;
 }
 
 :root {
@@ -18,7 +17,7 @@
     --radius: 15px;
 }
 
-/* Custom Cursor Styles */
+/* Custom Cursor Styles - UPDATED */
 .cursor {
     width: 20px;
     height: 20px;
@@ -243,7 +242,6 @@ body.loaded * {
     border: none;
     font-size: 1.5rem;
     color: var(--primary);
-    cursor: none;
     padding: 10px;
 }
 
@@ -1236,16 +1234,6 @@ footer {
 @media (max-width: 768px) {
     body {
         padding-top: 70px;
-        cursor: auto !important;
-    }
-    
-    * {
-        cursor: auto !important;
-    }
-    
-    .cursor,
-    .cursor-follower {
-        display: none !important;
     }
     
     .nav-menu {
@@ -1354,6 +1342,12 @@ footer {
         font-size: 1.2rem;
         bottom: 90px;
         right: 20px;
+    }
+    
+    /* Hide custom cursor on mobile */
+    .cursor,
+    .cursor-follower {
+        display: none !important;
     }
 }
 
