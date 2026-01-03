@@ -947,7 +947,7 @@ body.loaded * {
 
 .submit-btn {
     width: 100%;
-    background: linear-gradient(135deg, var(--primary) 0%, #283593 100%);
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
     color: white;
     padding: 20px;
     font-size: 1.2rem;
@@ -957,9 +957,25 @@ body.loaded * {
 }
 
 .submit-btn:hover {
-    background: linear-gradient(135deg, var(--secondary) 0%, #f57c00 100%);
+    background: linear-gradient(135deg, #1da851 0%, #0d7a5a 100%);
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(255, 152, 0, 0.4);
+    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+}
+
+.form-note {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #666;
+    background: #f0f5ff;
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent);
+    text-align: center;
+}
+
+.form-note i {
+    color: var(--accent);
+    margin-right: 8px;
 }
 
 /* Footer */
